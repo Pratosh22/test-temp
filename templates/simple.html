@@ -1,34 +1,37 @@
 {% extends "index.html" %}
 
 {% block mainContent %}
-    <div class="jumbotron jumbotron-fluid" style="background-color: #FFD700; color: #000;">
-        <div class="container text-center">
-            <h1 class="display-4">Flask Calculator</h1>
-            <p class="lead">You can try out our awesome calculator</p>
-            <hr class="my-4" style="border-color: #FF6347;">
-            <p class="lead">
-                <a class="btn btn-light btn-lg" href="#" role="button">Learn more</a>
-            </p>
-        </div>
-    </div>
-
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="card shadow-sm" style="border-color: #4682B4;">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Basic Calculations</h5>
-                        <p class="card-text">Perform basic arithmetic operations with ease.</p>
-                        <a href="#" class="btn btn-primary" style="background-color: #FF6347; border-color: #FF6347;">Try Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card shadow-sm" style="border-color: #4682B4;">
-                    <div class="card-body">
-                        <h5 class="card-title">Advanced Calculations</h5>
-                        <p class="card-text">Handle complex calculations and scientific computations.</p>
-                        <a href="#" class="btn btn-primary" style="background-color: #FF6347; border-color: #FF6347;">Explore More</a>
+                        <h5 class="card-title">Calculator</h5>
+                        <form method="POST" action="/calculate">
+                            <div class="mb-3">
+                                <label for="num1" class="form-label">Number 1</label>
+                                <input type="number" class="form-control" id="num1" name="num1" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="num2" class="form-label">Number 2</label>
+                                <input type="number" class="form-control" id="num2" name="num2" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="operation" class="form-label">Operation</label>
+                                <select class="form-control" id="operation" name="operation" required>
+                                    <option value="add">Add</option>
+                                    <option value="subtract">Subtract</option>
+                                    <option value="multiply">Multiply</option>
+                                    <option value="divide">Divide</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Calculate</button>
+                        </form>
+                        {% if result is not none %}
+                            <div class="alert alert-info mt-3">
+                                Result: {{ result }}
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>

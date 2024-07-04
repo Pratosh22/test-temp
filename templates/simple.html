@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+
+{% block mainContent %}
+    <div class="jumbotron jumbotron-fluid" style="background-color: #FFD700; color: #000;">
+        <div class="container text-center">
+            <h1 class="display-4">Flask Calculator</h1>
+            <p class="lead">You can try out our awesome calculator</p>
+            <hr class="my-4" style="border-color: #FF6347;">
+            <p class="lead">
+                <a class="btn btn-light btn-lg" href="#" role="button">Learn more</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm" style="border-color: #4682B4;">
+                    <div class="card-body">
+                        <h5 class="card-title">Basic Calculations</h5>
+                        <p class="card-text">Perform basic arithmetic operations with ease.</p>
+                        <a href="#" class="btn btn-primary" style="background-color: #FF6347; border-color: #FF6347;">Try Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm" style="border-color: #4682B4;">
+                    <div class="card-body">
+                        <h5 class="card-title">Advanced Calculations</h5>
+                        <p class="card-text">Handle complex calculations and scientific computations.</p>
+                        <a href="#" class="btn btn-primary" style="background-color: #FF6347; border-color: #FF6347;">Explore More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
